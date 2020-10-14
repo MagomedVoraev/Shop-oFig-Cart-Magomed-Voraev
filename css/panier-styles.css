@@ -1,0 +1,280 @@
+body {
+    font-family: raleway, sans-serif;
+}
+
+/* ==================================
+            header
+================================== */
+
+.site-header {
+    background-color: #c80000;
+    color: white;
+    padding: 1em;
+}
+
+.site-header__brandname {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.site-header__baseline {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+/* ==================================
+            page title
+================================== */
+
+.page-title {
+    background-color: #666;
+    color: white;
+    font-size: 1.2rem; 
+    text-align: center;
+    padding: 0.5em;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    
+    z-index: 1;
+
+}
+
+.page-title__game {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+/* ==================================
+            promo
+================================== */
+.promo {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 0.5em 0.5em 0.5em 0.3em;
+    background-color: #c80000;
+    color: #fff;
+    text-decoration: none;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+
+/* ==================================
+            main
+================================== */
+.main__section {
+    width: 60%;
+    margin: auto;
+}
+
+.main__title {
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin: 2rem 1rem 2rem -1rem;
+}
+
+.main__table {
+    text-align: center;
+    width: 100%;
+    -webkit-box-shadow: 0px 2px 2px 0.5px rgba(0,0,0,0.08);
+    -moz-box-shadow: 0px 2px 2px 0.5px rgba(0,0,0,0.08);
+    box-shadow: 0px 2px 2px 0.5px rgba(0,0,0,0.08);
+    margin-bottom: 1rem;
+}
+
+/* .table__header {
+    
+} */
+
+.table__header__table__rows {
+    font-weight: bold;
+    border-bottom: 1px solid lightgrey;
+    
+}
+
+.table__rows th {
+    font-size: 1.2rem;
+    padding: 0.4rem;
+}
+
+.table__rows td {
+    padding: 0.6rem;
+    vertical-align: middle;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ccc;
+}
+
+.table__rows__quantity {
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+
+}
+.table__input {
+    width: 2.5rem;
+    margin-right: 0.5rem;
+}
+
+.table__input__btn {
+    color: red;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+.table__rows__footer td {
+    padding: 1rem 1rem 0.7rem 1rem;
+}
+
+.table__total-text {
+    font-weight: bold;
+}
+
+.table__total-price {
+    color: red;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* =============================== */
+
+.main__form-section {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.form-section__left {
+    width: 50%;
+
+}
+
+.form-section__right {
+    width: 40%;
+}
+
+.left__legend, 
+.right__legend {
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+
+.left__fieldset,
+.right__fieldset {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+}
+
+.right__input {
+    background-color: #F4F4F4;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid lightgrey;
+    height: 2rem;
+    margin: 0.3rem 0;
+}
+
+
+.right__input__textearea {
+    background-color: #F4F4F4;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid lightgrey;
+    margin-bottom: 2rem;
+}
+
+.right__fieldset__label {
+    font-size: 0.9rem;
+}
+
+.right__fieldset__label__textearea {
+    font-size: 0.8rem;
+    margin-bottom: 0.3rem;
+}
+
+/* ================================ */
+
+.section__total {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem auto;
+    padding: 2rem;
+    -webkit-box-shadow: 0px 2px 2px 0.5px rgba(0,0,0,0.08);
+    -moz-box-shadow: 0px 2px 2px 0.5px rgba(0,0,0,0.08);
+    box-shadow: 0px 2px 2px 1px rgba(0,0,0,0.1);
+
+}
+
+.total-amount {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-left: 1rem;
+    
+}
+
+.total-amount-price {
+    color: red;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.final-decision {
+    width: 90%;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buy-more {
+    background-color: #DBDBDB;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.buy-more:hover {
+    background-color: lightslategrey;
+    color: white;
+}
+
+
+.checkout {
+    background-color: #C52300;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.checkout:hover {
+    background-color: #FF431B;
+    color: black;
+}
+
+/* ==================================
+            footer
+================================== */
+
+.site-footer {
+    margin-top: 2rem;
+    background-color: #666;
+    color: white;
+    padding: 0.5em;
+}
+
+.site-footer__copyright {
+    text-align: center;
+}

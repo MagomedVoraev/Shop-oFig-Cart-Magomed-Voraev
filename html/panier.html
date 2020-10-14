@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/reset.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/panier-styles.css">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+    <title>oFig - Panier</title>
+</head>
+
+<body>
+    <!-- ================================================ -->
+    <!-- ================================================ -->
+    <header class="site-header">
+        <h1 class="site-header__brandname">
+            oFig
+            <span class="site-header__baseline">Figurines et
+                statuettes</span>
+        </h1>
+    </header>
+
+
+    <!-- ================================================ -->
+    <!-- ================================================ -->
+    <main>
+        <h2 class="page-title">
+            Votre panier
+            <strong class="page-title__game">2 produits</strong>
+        </h2>
+        <a href="#" class="promo">soldes</a>
+
+        <!-- ================= main ===================== -->
+        <section class="main__section">
+
+            <h2 class="main__title">Votre panier</h2>
+
+            <table class="main__table">
+                <thead class="table__header">
+                    <tr
+                        class="table__header__table__rows table__rows">
+                        <th>Figurine</th>
+                        <th>Prix unitaire</th>
+                        <th>Quantité</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table__rows">
+                        <td>Cloud Strife</td>
+                        <td>59 €</td>
+                        <td>
+                            <div class="table__rows__quantity">
+                                <input class="table__input"
+                                    type="number" value="1">
+                                <button
+                                    class="table__input__btn">supprimer</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="table__rows">
+                        <td>Tina Lockhart</td>
+                        <td>69 €</td>
+                        <td>
+                            <div class="table__rows__quantity">
+                                <input class="table__input"
+                                    type="number" value="1">
+                                <button
+                                    class="table__input__btn">supprimer</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr class="table__rows">
+                        <td>Barret Wallace</td>
+                        <td>59 €</td>
+                        <td>
+                            <div class="table__rows__quantity">
+                                <input class="table__input"
+                                    type="number" value="1">
+                                <button
+                                    class="table__input__btn">supprimer</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr class="table__rows__footer">
+                        <td colspan="2" class="table__total-text">
+                            Total de la commande :</td>
+                        <td colspan="1" class="table__total-price">197
+                            €</td>
+                    </tr>
+                </tfoot>
+
+            </table>
+
+            <hr>
+
+            <h2 class="main__title">Préférences de livraison</h2>
+
+            <form class="main__form-section">
+
+                <div class="form-section__left">
+                    <fieldset class="left__fieldset">
+                        <legend class="left__legend">Où souhaitez-vous
+                            être livré ?
+                        </legend>
+                        <div class="left__fieldset__input">
+                            <input type="radio" name="address"
+                                id="current-address">
+                            <label for="current-address">Mon adresse
+                                courante</label>
+                        </div>
+                        <div class="left__fieldset__input">
+                            <input type="radio" name="address" checked
+                                id="other-address">
+                            <label for="other-address">Autre
+                                adresse</label>
+                        </div>
+                    </fieldset>
+
+                    <fieldset class="left__fieldset">
+                        <legend class="left__legend">Options</legend>
+                        <div>
+                            <input type="checkbox" id="suivi-address"
+                                checked>
+                            <label for="suivi-address">
+                                Suivi de livraison par
+                                sms
+                                (inclus)
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox"
+                                id="satisfait"><label for="satisfait">
+                                Satisfait ou
+                                remboursé
+                                (+2
+                                euros)
+                            </label>
+                        </div>
+
+                        <div>
+                            <input type="checkbox"
+                                id="garantie"><label for="garantie">
+                                Garantie 2 ans (+
+                                10
+                                euros)
+                            </label>
+                        </div>
+                    </fieldset>
+                </div>
+
+                <div class="form-section__right">
+
+                    <fieldset class="right__fieldset">
+                        <legend class="right__legend">Adresse</legend>
+                        <label class="right__fieldset__label"
+                            for="rue">Rue</label>
+                        <input class="right__input" type="text"
+                            id="rue">
+
+                        <label class="right__fieldset__label"
+                            for="code-postal">Code postal</label>
+                        <input class="right__input" type="text"
+                            id="code-postal">
+
+                        <label class="right__fieldset__label"
+                            for="ville">Ville</label>
+                        <input class="right__input" type="text"
+                            id="ville">
+                    </fieldset>
+
+                    <fieldset class="right__fieldset">
+                        <legend class="right__legend">Informations
+                            complémentaires</legend>
+
+                        <label
+                            class="right__fieldset__label__textearea"
+                            for="additionnal-info">interphone,
+                            bâtiment, etc.</label>
+                        <textarea class="right__input__textearea"
+                            name="more-info" id="additionnal-info"
+                            rows="3"></textarea>
+                    </fieldset>
+
+                </div>
+            </form>
+
+            <hr>
+
+
+            <div class="section__total">
+                <h3 class="total-amount">Montant total à régler :</h3>
+                <strong class="total-amount-price">197 €</strong>
+            </div>
+
+            <hr>
+
+            <div class="final-decision">
+                <button class="buy-more">Continuer vos achats</button>
+                <button class="checkout">Valider et payer</button>
+            </div>
+        </section>
+    </main>
+
+
+    <!-- ================================================ -->
+    <!-- ================================================ -->
+    <footer class="site-footer">
+        <p class="site-footer__copyright">oFig - toutes les images
+            sont sous copyright SquareEnix</p>
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,264 @@
+/*
+Rouge : #c80000
+Gris foncé : #666
+Gris clair (bordures et catégorie): #ccc
+*/
+
+body {
+    font-family: raleway, sans-serif;
+}
+
+.site-header {
+    background-color: #c80000;
+    color: white;
+    padding: 1em;
+}
+
+.site-header__brandname {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.site-header__baseline {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 0.5rem;
+}
+
+.page-title {
+    background-color: #666;
+    color: white;
+    font-size: 1.2rem; 
+    text-align: center;
+    padding: 0.5em;
+    /* position sticky sert a rendre un élément en position fixed seulement à partir du moment ou il ne sera plus visible lors d'un scroll */
+    position: -webkit-sticky;
+    position: sticky;
+    /* pour régler ce déclemenchement on doit décider à partir de quand il se déclenche, pour cela on utilise la propriété top */
+    top: 0;
+    /* Problème cet élément est l'un des premier a être déclarer dans notre page html. il se retrouve donc naturelement en dessou (visuellement) des éléments suivants. Afin de régler ce problème on peut décider de modifier la profondeur des élément sur un axe Z, grâce à la propriété z-index. Par défaut tous les élément on un z-index de 0. Il nous suffit donc, ici, de le modifier à 1 */
+    /* valeur maximale de z-index : 2147483648 */
+    z-index: 1;
+
+}
+
+.page-title__game {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+.site-footer {
+    background-color: #666;
+    color: white;
+    padding: 0.5em;
+}
+
+.site-footer__copyright {
+    text-align: center;
+}
+
+.figurine-list{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 1.5rem auto;
+}
+
+.figurine {
+    /* Afin de définir cet élément comme élément de référence pour un positionnement absolu d'un de ses enfants, je modifie le poistionnement avec une valeur différente de static (qui est la valeur par défaut). Dans notre exemple comme on ne veut pas que l'élément sorte de flux classique on le positionne de façon relative */
+    position: relative;
+    width: 25%;
+    border: solid 1px #ccc;
+    padding: 0.4em;
+    margin: .5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.figurine__picture {
+    width: 100%;
+}
+
+.figurine__caption {
+    text-transform: uppercase;
+    color: #ccc;
+    padding: 0.3em;
+    border-bottom: solid 1px #ccc;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.figurine__name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 1rem 0;
+}
+
+.figurine__description {
+    margin-bottom: 1rem;
+    line-height: 1.3rem;
+}
+
+.figurine__promo{
+    /* Par contre, ici, je veux sortir mon élément hors du flux afin que sa taille ne perturbe pas l'affichage des autres élément. De plus cela va me permmtre de le positionner plus précisemment par rapport au plus proche parent déjà positionné (dans notre exemple le contenaire "figurine" */
+    position: absolute;
+    /*
+    Afin de régler ce positionnement je peux décaler ces coordonnées par rapport au 4 coté de l'élément de référence (top, right, bottom, left)
+    */
+    top: 10px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 48% 52% 23% 77% / 68% 15% 85% 32%;
+    background-color: #c80000;
+    color: #fff;
+    border: solid 5px #d69898;
+    /* Afin de centrer le texte horizontalement et verticalement, on peut utiliser flex, car le texte est considérer comme un élément enfant de notre élément html */
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    background-color: #ccc;
+    /* pour annuler des bordures déjà présente, on utilise la valeur "none" */
+    border: none;
+    padding: 1em;
+    outline: none;
+    cursor: pointer;
+}
+
+/* la pseudo-classe hover se déclanche au moment ou l'utilisateur passe sa souris au dessus de l'élément */
+
+.button:hover {
+    background-color: #666;
+}
+
+/* la pseudo-classe active se déclenche au clic sur le bouton*/
+
+.button:active {
+    color: white;
+}
+
+.button--cart-add {
+    background-color: #c80000;
+    color: white;
+    font-size: 0.8rem;
+}
+
+/* On précise le contexte en plus afin d'afficher le bouton sur toute la largeur de sont contenaire */
+
+.figurine .button--cart-add {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    text-align: left;
+}
+
+.button--cart-add:hover {
+    background-color: #7e0000;
+}
+
+.button--cart-add:active {
+    color: black;
+}
+
+.button__strike-price {
+    /* cette propriété sert à barré le prix */
+    text-decoration: line-through;
+    /*
+    On donne la possibilité au navigateur de gérer lui-même lespace disponible et de s'en servir comme marge. Dans ce cas le prix barré étant le seul élément ayant une marge automatique c'est a gauche de celui-ci que TOUT l'espace disponible sera utilisé. Ce qui aura pour résultat de "pousser" tous les éléments à droite de cette marge
+    */
+    margin-left: auto;
+    /* dans le cas d'une valeur décimal entre 0 et 1, on peut ommetre le 0 des entiers */
+    margin-right: .4rem;
+    white-space: nowrap;
+}
+
+.button__new-price {
+    font-size: 1.1rem;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.promo {
+    /*
+    position fixed, comme postion absolute, sort du flux html. Par contre il sera toujours positionné par rapport à la fenêtre.
+    Ici notre élément est de type inline. à la base (<a>);
+    Le fait de le positionné de façon fixed (comme cela aurait pu être les cas en absolute) fait que cela le transforme en disply: block. De façon implicite
+    */
+    position: fixed;
+    top: 50%;
+    /* c'est propriété permet de déplacer l'objet par rapport à lui même sur axe particulier, ici l'axe des Y (vertical)*/
+    /* on décale l'élément vers le haut de la moitié de sa hauteur */
+    /* dans le cas d'un transform les % se réfère à l'élément lui-même et, non, comme habituellement au parent. */
+    transform: translateY(-50%);/* Big Up a florian-sanders*/
+    padding: 0.5em 0.5em 0.5em 0.3em;
+    background-color: #c80000;
+    color: #fff;
+    text-decoration: none;
+    /*
+    Maintenant on veut que chaque lettre soit l'une en dessous de l'autre
+    */
+    /* 
+    Première technique de sioux (pas la meilleur 
+    On permet de casser le mot sur plusieurs ligne
+    On reduit la largeu du contenur à son minumum
+    */
+    /*
+    word-wrap: break-word;
+    width:0;
+    */
+
+    /*
+    Deuxième technique (la meilleure)
+    On change le sens d'écriture
+    @link : https://developer.mozilla.org/fr/docs/Web/CSS/text-orientation
+    */
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+
+    border-top-right-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+}
+
+.panier {
+    display: flex;
+    justify-content: center;
+    margin: 3rem;
+}
+
+.panier__ouvrir {
+    font-size: 1rem;
+    background-color: #c80000;
+    color: #fff;
+    font-weight: bold;
+    padding: 0.7rem;
+    border-radius: 0.1rem;
+}
+
+/*
+Historiquement les propriété était différentes d'un navigateur à l'autre.
+C'est à dire qu'elles étaient traité de manière différentes.
+Chaque moteur d'interprétation avait ses propres propriété.
+Elles sont de moins en moins courantes. Sauf dans le cas ou un navigateur veut avancé plus vite qu'un autre, alors il implémente les nouvelles propriété non-standardisé avec un préfixe.
+
+Chrome et Safari utilisent le préfixe : -webkit-
+Firefox : -moz-
+IE et Edge : -ms-
+Opera = -o-
+
+En ce qui nous concerne sur ce projet, on va utiliser le positionnement "sticky" qui est encore en version de travail. C'est à dire en cours de standardisation pour tous les navigateurs. Pour une compatibilté maximale on est obligé d'adjoindre à la valeur classique (sticky) une autre avec prefix webkit (-webkit-sticky)
+
+Pour cela il suffit de commencé par spécifier les version avec préfixe, et de terminer par la version standardisé
+
+.sticky-elem{
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+
+*/
