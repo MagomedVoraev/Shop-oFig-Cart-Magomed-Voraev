@@ -6,7 +6,7 @@ Vous vous souvenez de oFig ? Avec les petites figurines ? Bon et bien continuons
 
 Réaliser la page panier du site
 
-![page-panier](../ressources/resultat.png)
+![page-panier](/ressources/resultat.png)
 
 On s'occupe avant tout du formulaire (_les styles des radios et des checkboxes peuvent varier d'un navigateur à l'autre, on ne va pas les customiser ici_)
 
